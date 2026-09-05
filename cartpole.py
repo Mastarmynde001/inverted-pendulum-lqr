@@ -20,7 +20,7 @@ class CartPoleSystem:
         state = [p, v, theta, omega]^T
         u = applied force
         """
-        p, v, theta, omega = state
+        _p, v, theta, omega = state
         
         # Apply saturation limits to input force
         u = np.clip(u, -20.0, 20.0)
