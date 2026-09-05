@@ -69,7 +69,7 @@ class SimulationVisualizer:
         # Clear screen
         self.screen.fill((240, 240, 240))
         
-        pos, vel, theta, omega = state
+        pos, _vel, theta, _omega = state
         
         # Draw track
         pygame.draw.line(self.screen, (0, 0, 0), (0, self.track_y), (self.width, self.track_y), 2)
