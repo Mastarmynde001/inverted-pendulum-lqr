@@ -76,4 +76,4 @@ We utilize a heavy penalty on pole deviation ($Q[2,2] = 100.0$) and a lenient co
 - `--dt`: Set the precision of the RK4 integrator (default `0.01`s).
 
 ## CI/CD
-This repository runs automated GitHub Actions testing via `pytest` and code linting via `ruff` on every push to the `main` branch.
+This repository runs automated GitHub Actions testing via `pytest`

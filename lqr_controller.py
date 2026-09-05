@@ -29,12 +29,13 @@ class LQRController:
         # Compute the optimal gain matrix K = R^-1 * B^T * P
         self.K = np.linalg.inv(self.R) @ B.T @ self.P
 
-    def compute_force(self, x: np.ndarray) -> float:
+    def compute_force(self, x: np.ndarray, dt: float = 0.0) -> float:
         """
         Computes the optimal control effort (force) to apply to the cart.
         
         Args:
             x (np.ndarray): Current state vector [position, velocity, angle, angular_velocity]
+            dt (float, optional): Time step duration (unused by LQR, accepted for unified interface).
             
         Returns:
             float: The control effort u = -K * x
@@ -62,7 +63,7 @@ class PIDController:
         self.kd = kd
         self.integral_error = 0.0
 
-    def compute_force(self, x: np.ndarray, dt: float) -> float:
+    def compute_force(self, x: np.ndarray, dt: float = 0.01) -> float:
         """
         Computes the PID control effort to stabilize the pole angle.
         

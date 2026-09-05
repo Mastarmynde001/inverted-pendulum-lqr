@@ -38,7 +38,7 @@ def main():
     try:
         while running:
             # Control Input calculation
-            if args.mode == "lqr":
+            if isinstance(controller, LQRController):
                 u = controller.compute_force(state)
             else:
                 u = controller.compute_force(state, args.dt)
