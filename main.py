@@ -1,5 +1,4 @@
 import argparse
-import time
 import sys
 import numpy as np
 from cartpole import CartPoleSystem
